@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Home from './Pages/Home';
 import Register from './Pages/Register';
-import { Motion } from 'react-motion';
+import app from 'firebase/compat/app';
 
 
 function App() {
