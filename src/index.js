@@ -5,6 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import app from 'firebase/compat/app';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from './Firebase';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

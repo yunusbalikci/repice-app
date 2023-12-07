@@ -3,6 +3,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate, Link } from "react-router-dom";
 import firebase from 'firebase/compat/app';
 import { auth } from "../Firebase";
+import { db } from "../Firebase";
 
 
 export default function LoginModal({ isOpen, onClose }) {
@@ -17,7 +18,7 @@ export default function LoginModal({ isOpen, onClose }) {
       .then((userCredential) => {
         // Giriş başarılı
         const user = userCredential.user;
-        navigate("/home");
+        navigate("/userprofile");
         console.log(user);
       })
       .catch((error) => {
@@ -40,7 +41,7 @@ export default function LoginModal({ isOpen, onClose }) {
           <h2 className="mb-2">Kullanıcı Adı</h2>
           <input className="text-black bg-gray-300 w-full border items-start rounded-md px-2 mr-10 h-8" onChange={(e) => setEmail(e.target.value)} placeholder="Kullanıcı Adı"></input>
           <h2 className="mb-2 mt-5">Şifre</h2>
-          <input className="text-black bg-gray-300 w-full border items-start rounded-md px-2 mr-10 h-8" onChange={(e) => setPassword(e.target.value)} placeholder="Şifre"></input>
+          <input className="text-black bg-gray-300 w-full border items-start rounded-md px-2 mr-10 h-8" type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Şifre"></input>
           <a href="#" className="text-blue-600 hover:underline mt-1">Şifremi Unuttum</a>
           <button onClick={onLogin} className="px-10 py-2 mt-3 text-xl font-semibold text-center text-white transition duration-300 rounded-lg hover:from-orange-300 hover:to-orange-600 ease bg-gradient-to-br from-orange-500 to-orange-400 transition duration-300 md:w-auto">
             Giriş Yap
