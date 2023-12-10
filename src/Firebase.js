@@ -1,5 +1,5 @@
 
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, addDoc,collection } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
 import { initializeApp } from "firebase/app";
 import 'firebase/compat/firestore';
@@ -19,4 +19,16 @@ const isLocalhost = window.location.hostname === 'localhost';
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const db = getFirestore(app);
+const productsRef = collection(db, 'products');
+
 export {db}
+
+export const addProduct = () => {
+  const email =auth.currentUser?.email
+  if(!email) return
+  addDoc(productsRef,{
+    name: 'test',
+    price: 100,
+    email: email,
+  })
+}

@@ -8,9 +8,11 @@ import Home from './Pages/Home';
 import Register from './Pages/Register';
 import app from 'firebase/compat/app';
 import UserProfile from './Pages/UserProfile';
+import LoginHeader from './Components/LoginHeader';
 
 function App() {
   return (
+
     <Routes>
       <Route path='/' element={<Home />}></Route>
       <Route path='/register' element={<Register />}></Route>
