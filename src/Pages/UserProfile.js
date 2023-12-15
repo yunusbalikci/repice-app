@@ -9,6 +9,7 @@ import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import LoginHeader from '../Components/LoginHeader';
 import Header from '../Components/Header';
+import Section from '../Components/Section';
 
 const app = initializeApp(firebaseConfig);
 const userDataRef = collection(db, 'userData');
@@ -52,17 +53,11 @@ const UserProfile = () => {
   }
 
   return (
-    <div>
+      <div className='bg-zinc-100'>
       <LoginHeader></LoginHeader>
+      <Section></Section>
 
-      <button onClick={() => addProduct()}>Add</button>
-
-      {data.map((userData) => (
-        <div key={userData.id}>
-          <p className='mt-28'>{userData.email}</p>
-          <p className='mt-28'>{user?.email}</p>
-        </div>
-      ))}
+      
     </div>
   );
 };

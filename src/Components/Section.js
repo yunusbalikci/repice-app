@@ -30,8 +30,8 @@ export default function Section(){
 
 
     return(
-        <div className="bg-repice-bg">
-            <div className="container mx-auto py-10 pb-8 bg-zinc-100">
+        <div className="bg-zinc-100">
+            <div className="xl:container mx-auto py-10 pb-8 bg-zinc-100">
                     <div class="flex flex-col md:flex-row items-center">
                         <div class="md:w-1/2 text-center md:text-left mb-4 md:mb-0">
                             <h1 class="text-2xl md:text-4xl font-bold mt-10 xl:mt-3 mb-5">Deftere en çok eklenen <br />Yemekler</h1>
@@ -57,19 +57,19 @@ export default function Section(){
                     <h1 className="text-center md:opacity-0 md:ml-16  md:text-left font-bold text-3xl mt-5 uppercase font-open -mb-20">trend yemekler</h1>
                     <div className="mt-20">
                         <div className="flex">
-                            <h1 className="opacity-0 md:opacity-100 ml-16 text-3xl font-bold mt-3">TREND YEMEKLER</h1>
-                            <div className="flex text-right flex-grow space-x-2 md:-space-x-96 text-md  md:text-lg uppercase whitespace-nowrap font-bold font-open">
-                                <p className="mt-4 flex-grow text-center md:text-right hover:text-red-600  cursor-pointer">Bugün</p>
-                                <p className="mt-4 flex-grow text-center md:text-right  cursor-pointer">Bu hafta</p>
-                                <p className="mt-4 flex-grow text-center md:text-right  cursor-pointer">Bu ay</p>
-                                <p className="mt-4 flex-grow text-center md:text-right  cursor-pointer">Bu yıl</p>
+                            <h1 className="opacity-0 md:opacity-100 ml-20 text-3xl font-bold mt-3">TREND YEMEKLER</h1>
+                            <div className="hidden md:flex md:text-right flex-grow space-x-2 md:-space-x-96 text-md  md:text-lg uppercase whitespace-nowrap font-bold font-open">
+                                <p className="mt-4 flex-grow text-center lg:text-right hover:text-red-600  cursor-pointer">Bugün</p>
+                                <p className="mt-4 flex-grow text-center lg:text-right  cursor-pointer">Bu hafta</p>
+                                <p className="mt-4 flex-grow text-center lg:text-right  cursor-pointer">Bu ay</p>
+                                <p className="mt-4 flex-grow text-center lg:text-right  cursor-pointer">Bu yıl</p>
                             </div>
                         </div>
                     </div>
                     
                     <div className="flex flex-wrap justify-center py-3 space-y-4 space-x-10 text-center">
                     {contents.map((content, index) => (
-                        <div key={index} className="mt-4 ml-10 rounded overflow-hidden w-64 h-64 md:w-80 md:h-80 shadow-md bg-white">
+                        <div key={index} className="mt-4 ml-8 rounded overflow-hidden w-64 h-64 md:w-80 md:h-80 shadow-md bg-white">
                             <img src={content.imageUrl} className="w-full h-40 md:h-60 sm:h-48 object-cover" alt={`Content ${index + 1}`} />
                         <div className="mt-3">
                             <span className="font-open uppercase font-bold">{content.title}</span><br />
@@ -77,6 +77,7 @@ export default function Section(){
                         </div>
                         </div>
       ))}
+      <p className="text-gray-500 opacity-80">Designed by https://github.com/yunusbalikci</p>
                     </div>
 
             </div>

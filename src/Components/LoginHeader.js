@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import LoginModal from "./LoginModal";
+import { Link } from "react-router-dom";
 
 const app = initializeApp(firebaseConfig);
 const ref = collection(db,'userData')
@@ -15,6 +16,9 @@ const user = auth.currentUser
 
 
 export default function LoginHeader() {
+
+    const [open,setOpen] = useState(true)
+
     const navigate = useNavigate();
     const handleCloseModal = () => {
         setLoginModalOpen(false);
@@ -58,20 +62,17 @@ export default function LoginHeader() {
             <div className="bg-repice-red">
             <header className="fixed top-0 w-full z-50  bg-repice-red py-2 lg:py-4  uppercase">
                 <div className="container mx-auto">
-                <div className="flex items-center  justify-between space-x-4 lg:space-x-8">
-                    <a to ="/"  className="md:pl-0 text-3xl lg:text-6xl font-bold font-open  text-repice-orange2">YEMEK</a>
-                    <div className="block md:hidden pr-4">
-                        <div className="space-y-1 cursor-pointer">
-                            <div className="bg-orange-400 w-8 h-1 rounded-full"></div>
-                            <div className="bg-orange-400 w-8 h-1 rounded-full"></div>
-                            <div className="bg-orange-400 w-8 h-1 rounded-full"></div>
-                        </div>
+                <div className="flex items-center  justify-between space-x-4 lg:space-x-14">
+                    <Link to ="/"  className="md:pl-0 text-3xl lg:text-6xl font-bold font-open  text-repice-orange2 cursor-pointer">YEMEK</Link>
+                    <div className="space-x-6 justify-end ml-8 pl-3 text-white font-open">
+                    <Link to="/categories" className="hover:text-slate-200  transition duration-200 font-open">kategoriler</Link>
+                    <Link to="/favorites" className="hover:text-slate-200 transition duration-200 font-open">favoriler</Link>
                     </div>
 
-                <nav className="hidden md:flex text-white justify-between flex-1">
-                    <div className="flex items-center font-bold text-sm lg:text-lg lg:space-x-8">
+                <nav className="flex text-white justify-between flex-1">
+                    <div className="flex items-center font-bold text-sm lg:text-lg space-x-8 lg:space-x-14">
                         
-                        <form>   
+                        <form className="invisible lg:visible">   
                             <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-black font-open">Ara</label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -84,10 +85,9 @@ export default function LoginHeader() {
                             </div>
                         </form>
 
-                        <a href="/" className="hover:text-slate-200 transition duration-200 font-open">tarifler</a>
-                        <a href="/" className="hover:text-slate-200 transition duration-200 font-open">kategoriler</a>
-                        <a href="/" className="hover:text-slate-200 transition duration-200 font-open">favoriler</a>
-                        <button onClick={handleLogout} className="hover:text-slate-200 transition duration-200 font-open">çıkış</button>
+                        <Link to="/categories" className="hover:text-slate-200 transition duration-200 font-open">kategoriler</Link>
+                        <Link to="/favorites" className="hover:text-slate-200 transition duration-200 font-open">favoriler</Link>
+                        <button onClick={handleLogout} className={`hover:text-slate-200 ${!user && "hidden"} transition uppercase duration-200 font-open`}>çıkış</button>
                         
                         <div className="border-l-2 border-slate-200">
                         <div onClick={handleLoginClick} className="flex w-40 rounded-md px-1 py-1 cursor-pointer">

@@ -8,7 +8,8 @@ import Home from './Pages/Home';
 import Register from './Pages/Register';
 import app from 'firebase/compat/app';
 import UserProfile from './Pages/UserProfile';
-import LoginHeader from './Components/LoginHeader';
+import Favorites from './Pages/Favorites';
+import Categories from './Pages/Categories';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
       <Route path='/' element={<Home />}></Route>
       <Route path='/register' element={<Register />}></Route>
       <Route path='/userprofile' element={<UserProfile />}></Route>
+      <Route path='favorites' element={<Favorites />}></Route>
+      <Route path='/categories' element = {<Categories/>}></Route>
 
 
 
