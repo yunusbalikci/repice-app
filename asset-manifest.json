@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/repice-app/static/css/main.83a9536a.css",
+    "main.js": "/repice-app/static/js/main.136b8325.js",
+    "static/js/787.8cf52469.chunk.js": "/repice-app/static/js/787.8cf52469.chunk.js",
+    "static/media/food.PNG": "/repice-app/static/media/food.ba80820aceda3d1dd3d9.PNG",
+    "static/media/newicon.png": "/repice-app/static/media/newicon.72f2c604b25eb0958a49.png",
+    "index.html": "/repice-app/index.html",
+    "main.83a9536a.css.map": "/repice-app/static/css/main.83a9536a.css.map",
+    "main.136b8325.js.map": "/repice-app/static/js/main.136b8325.js.map",
+    "787.8cf52469.chunk.js.map": "/repice-app/static/js/787.8cf52469.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.83a9536a.css",
+    "static/js/main.136b8325.js"
+  ]
+}
